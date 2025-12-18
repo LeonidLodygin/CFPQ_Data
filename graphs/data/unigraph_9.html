@@ -47,6 +47,7 @@
     <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'graphs/data/unigraph_9';</script>
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within CFPQ_Data 4.0.3 documentation"
@@ -309,6 +310,10 @@
   
 
   
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
 </div>
 
     </header>
@@ -494,7 +499,120 @@
                 <article class="bd-article">
                   
   <section id="unigraph-9">
-<span id="id1"></span><h1>unigraph_9<a class="headerlink" href="#unigraph-9" title="Link to this heading">#</a></h1>
+<span id="id1"></span><h1><a class="toc-backref" href="#id2" role="doc-backlink">unigraph_9</a><a class="headerlink" href="#unigraph-9" title="Link to this heading">#</a></h1>
+<nav class="contents" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#unigraph-9" id="id2">unigraph_9</a></p>
+<ul>
+<li><p><a class="reference internal" href="#info" id="id3">Info</a></p></li>
+<li><p><a class="reference internal" href="#graph-statistics" id="id4">Graph Statistics</a></p></li>
+<li><p><a class="reference internal" href="#edges-statistics" id="id5">Edges Statistics</a></p></li>
+<li><p><a class="reference internal" href="#grammar" id="id6">Grammar</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="info">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Info</a><a class="headerlink" href="#info" title="Link to this heading">#</a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Full Name</p></td>
+<td><p>unigraph_9</p></td>
+</tr>
+<tr class="row-odd"><td><p>Version</p></td>
+<td><p>4.0.3</p></td>
+</tr>
+<tr class="row-even"><td><p>Direct download (.mtx files)</p></td>
+<td><p><a class="reference external" href="https://drive.google.com/uc?export=download&amp;id=1v27oSwzkS_Z35QkzIlO5KD6XqrHjL_vU">.tar.gz</a></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="graph-statistics">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Graph Statistics</a><a class="headerlink" href="#graph-statistics" title="Link to this heading">#</a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Num Nodes</p></th>
+<th class="head"><p>Num Edges</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>475479</p></td>
+<td><p>3579034</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="edges-statistics">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Edges Statistics</a><a class="headerlink" href="#edges-statistics" title="Link to this heading">#</a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Edge Label</p></th>
+<th class="head"><p>Num Edge Label</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Is_homologous_to</p></td>
+<td><p>51193</p></td>
+</tr>
+<tr class="row-odd"><td><p>Is_homologous_to_r</p></td>
+<td><p>51193</p></td>
+</tr>
+<tr class="row-even"><td><p>belongs_to</p></td>
+<td><p>69672</p></td>
+</tr>
+<tr class="row-odd"><td><p>belongs_to_r</p></td>
+<td><p>69672</p></td>
+</tr>
+<tr class="row-even"><td><p>codes_for</p></td>
+<td><p>63434</p></td>
+</tr>
+<tr class="row-odd"><td><p>codes_for_r</p></td>
+<td><p>63434</p></td>
+</tr>
+<tr class="row-even"><td><p>has</p></td>
+<td><p>287954</p></td>
+</tr>
+<tr class="row-odd"><td><p>has_r</p></td>
+<td><p>287954</p></td>
+</tr>
+<tr class="row-even"><td><p>interacts_with</p></td>
+<td><p>123610</p></td>
+</tr>
+<tr class="row-odd"><td><p>participate_in</p></td>
+<td><p>834013</p></td>
+</tr>
+<tr class="row-even"><td><p>participate_in_r</p></td>
+<td><p>834013</p></td>
+</tr>
+<tr class="row-odd"><td><p>refers_to</p></td>
+<td><p>421446</p></td>
+</tr>
+<tr class="row-even"><td><p>refers_to_r</p></td>
+<td><p>421446</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="grammar">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Grammar</a><a class="headerlink" href="#grammar" title="Link to this heading">#</a></h2>
+<p>The grammar file is attached to the archive.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}S &amp;\to Seq\,  IsAssociated\,  IsSimilar \\
+Seq &amp;\to IsSimilar\, (codes\_for\,  IsSimilar)? \\
+&amp; IsSimilar \to \varepsilon \\
+&amp;\mid has\, IsSimilar\, has\_r \\
+&amp;\mid is\_homologous\_to\, IsSimilar\, is\_homologous\_to\_r\, IsSimilar \\
+&amp;\mid belongs\_to\, IsSimilar\, belongs\_to\_r \\
+&amp;\mid participate\_in\, IsSimilar\, participate\_in\_r \\
+&amp; IsAssociated \to refers\_to\, refers\_to\end{split}\]</div>
+</section>
 </section>
 
 
@@ -507,6 +625,27 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#info">Info</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-statistics">Graph Statistics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#edges-statistics">Edges Statistics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grammar">Grammar</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
