@@ -604,14 +604,14 @@
 <h2><a class="toc-backref" href="#id6" role="doc-backlink">Grammar</a><a class="headerlink" href="#grammar" title="Link to this heading">#</a></h2>
 <p>The grammar file is attached to the archive.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}S &amp;\to Seq\,  IsAssociated\,  IsSimilar \\
-Seq &amp;\to IsSimilar\, (codes\_for\,  IsSimilar)? \\
-&amp; IsSimilar \to \varepsilon \\
-&amp;\mid has\, IsSimilar\, has\_r \\
-&amp;\mid is\_homologous\_to\, IsSimilar\, is\_homologous\_to\_r\, IsSimilar \\
-&amp;\mid belongs\_to\, IsSimilar\, belongs\_to\_r \\
-&amp;\mid participate\_in\, IsSimilar\, participate\_in\_r \\
-&amp; IsAssociated \to refers\_to\, refers\_to\end{split}\]</div>
+\[\begin{split}S &amp;\to Seq \quad IsAssociated \quad IsSimilar \\
+Seq &amp;\to IsSimilar \quad (codes\_for \quad IsSimilar)? \\
+IsSimilar &amp;\to \varepsilon \\
+          &amp;\mid has \quad IsSimilar \quad has\_r \\
+          &amp;\mid is\_homologous\_to \quad IsSimilar \quad is\_homologous\_to\_r \quad IsSimilar \\
+          &amp;\mid belongs\_to \quad IsSimilar \quad belongs\_to\_r \\
+          &amp;\mid participate\_in \quad IsSimilar \quad participate\_in\_r \\
+IsAssociated &amp;\to refers\_to \quad refers\_to\end{split}\]</div>
 </section>
 </section>
 
