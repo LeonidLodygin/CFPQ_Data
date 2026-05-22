@@ -508,7 +508,7 @@
 <li><p><a class="reference internal" href="#info" id="id3">Info</a></p></li>
 <li><p><a class="reference internal" href="#graph-statistics" id="id4">Graph Statistics</a></p></li>
 <li><p><a class="reference internal" href="#edges-statistics" id="id5">Edges Statistics</a></p></li>
-<li><p><a class="reference internal" href="#canonical-grammar" id="id6">Canonical Grammar</a></p></li>
+<li><p><a class="reference internal" href="#grammar" id="id6">Grammar</a></p></li>
 </ul>
 </li>
 </ul>
@@ -544,7 +544,7 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>6455</p></td>
-<td><p>20082</p></td>
+<td><p>26528</p></td>
 </tr>
 </tbody>
 </table>
@@ -558,11 +558,29 @@
 </tr>
 </thead>
 <tbody>
+<tr class="row-even"><td><p>Entity</p></td>
+<td><p>6346</p></td>
+</tr>
+<tr class="row-odd"><td><p>Activity</p></td>
+<td><p>100</p></td>
+</tr>
+<tr class="row-even"><td><p>wasDerivedFrom</p></td>
+<td><p>183</p></td>
+</tr>
+<tr class="row-odd"><td><p>wasDerivedFrom_r</p></td>
+<td><p>183</p></td>
+</tr>
 <tr class="row-even"><td><p>specializationOf</p></td>
 <td><p>3177</p></td>
 </tr>
 <tr class="row-odd"><td><p>specializationOf_r</p></td>
 <td><p>3177</p></td>
+</tr>
+<tr class="row-even"><td><p>wasGeneratedBy</p></td>
+<td><p>3173</p></td>
+</tr>
+<tr class="row-odd"><td><p>wasGeneratedBy_r</p></td>
+<td><p>3173</p></td>
 </tr>
 <tr class="row-even"><td><p>used</p></td>
 <td><p>183</p></td>
@@ -582,37 +600,38 @@
 <tr class="row-odd"><td><p>wasAttributedTo_r</p></td>
 <td><p>3177</p></td>
 </tr>
-<tr class="row-even"><td><p>wasDerivedFrom</p></td>
-<td><p>183</p></td>
-</tr>
-<tr class="row-odd"><td><p>wasDerivedFrom_r</p></td>
-<td><p>183</p></td>
-</tr>
-<tr class="row-even"><td><p>wasGeneratedBy</p></td>
-<td><p>3173</p></td>
-</tr>
-<tr class="row-odd"><td><p>wasGeneratedBy_r</p></td>
-<td><p>3173</p></td>
-</tr>
 </tbody>
 </table>
 </section>
-<section id="canonical-grammar">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">Canonical Grammar</a><a class="headerlink" href="#canonical-grammar" title="Link to this heading">#</a></h2>
-<p>This grammar describes derivation chains in provenance graphs.
+<section id="grammar">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Grammar</a><a class="headerlink" href="#grammar" title="Link to this heading">#</a></h2>
+<p>This grammar is taken from <code class="docutils literal notranslate"><span class="pre">grammar/kotgll/prov_derivation.cfg</span></code> in the graph archive.
 The start nonterminal is <span class="math notranslate nohighlight">\(S\)</span>.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}S \, \rightarrow \, Step \mid S \, Step \, \\
-Step \, \rightarrow \, used_r \, Generated \mid wasDerivedFrom_r \, \\
-Generated \, \rightarrow \, wasGeneratedBy_r \, \\\end{split}\]</div>
-<p><a class="reference external" href="https://pyformlang.readthedocs.io/en/latest/modules/context_free_grammar.html">Pyformlang CFG</a>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">-&gt;</span> <span class="n">Step</span>
-<span class="n">S</span> <span class="o">-&gt;</span> <span class="n">S</span> <span class="n">Step</span>
-<span class="n">Step</span> <span class="o">-&gt;</span> <span class="n">used_r</span> <span class="n">Generated</span>
-<span class="n">Step</span> <span class="o">-&gt;</span> <span class="n">wasDerivedFrom_r</span>
-<span class="n">Generated</span> <span class="o">-&gt;</span> <span class="n">wasGeneratedBy_r</span>
-</pre></div>
-</div>
+\[\begin{split}S &amp;\to \mathit{Entity} \; S_{1} \\
+S_{1} &amp;\to \mathit{Core} \; \mathit{Entity} \\
+\mathit{Core} &amp;\to \mathit{wasDerivedFrom} \mid \mathit{wasDerivedFrom}^{r} \\
+              &amp;\mid \mathit{specializationOf} \mid \mathit{specializationOf}^{r} \\
+              &amp;\mid \mathit{wasGeneratedBy} \; \mathit{Core}_{1} \\
+              &amp;\mid \mathit{used}^{r} \; \mathit{Core}_{2} \\
+              &amp;\mid \mathit{wasGeneratedBy} \; \mathit{Core}_{3} \\
+              &amp;\mid \mathit{used}^{r} \; \mathit{Core}_{6} \\
+              &amp;\mid \mathit{wasDerivedFrom} \; \mathit{Core}_{9} \\
+              &amp;\mid \mathit{specializationOf} \; \mathit{Core}_{12} \\
+\mathit{Core}_{1} &amp;\to \mathit{Activity} \; \mathit{used} \\
+\mathit{Core}_{2} &amp;\to \mathit{Activity} \; \mathit{wasGeneratedBy}^{r} \\
+\mathit{Core}_{3} &amp;\to \mathit{Activity} \; \mathit{Core}_{4} \\
+\mathit{Core}_{4} &amp;\to \mathit{Core} \; \mathit{Core}_{5} \\
+\mathit{Core}_{5} &amp;\to \mathit{Activity} \; \mathit{wasGeneratedBy}^{r} \\
+\mathit{Core}_{6} &amp;\to \mathit{Activity} \; \mathit{Core}_{7} \\
+\mathit{Core}_{7} &amp;\to \mathit{Core} \; \mathit{Core}_{8} \\
+\mathit{Core}_{8} &amp;\to \mathit{Activity} \; \mathit{used} \\
+\mathit{Core}_{9} &amp;\to \mathit{Entity} \; \mathit{Core}_{10} \\
+\mathit{Core}_{10} &amp;\to \mathit{Core} \; \mathit{Core}_{11} \\
+\mathit{Core}_{11} &amp;\to \mathit{Entity} \; \mathit{wasDerivedFrom}^{r} \\
+\mathit{Core}_{12} &amp;\to \mathit{Entity} \; \mathit{Core}_{13} \\
+\mathit{Core}_{13} &amp;\to \mathit{Core} \; \mathit{Core}_{14} \\
+\mathit{Core}_{14} &amp;\to \mathit{Entity} \; \mathit{specializationOf}^{r}\end{split}\]</div>
 </section>
 </section>
 
@@ -642,7 +661,7 @@ Generated \, \rightarrow \, wasGeneratedBy_r \, \\\end{split}\]</div>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#info">Info</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-statistics">Graph Statistics</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#edges-statistics">Edges Statistics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#canonical-grammar">Canonical Grammar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grammar">Grammar</a></li>
 </ul>
   </nav></div>
 
