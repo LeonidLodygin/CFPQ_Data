@@ -578,18 +578,16 @@
 </section>
 <section id="grammar">
 <h2><a class="toc-backref" href="#id6" role="doc-backlink">Grammar</a><a class="headerlink" href="#grammar" title="Link to this heading">#</a></h2>
-<p>This grammar is taken from <code class="docutils literal notranslate"><span class="pre">grammar/kotgll/name_resolution.cfg</span></code> in the graph archive.
-The start nonterminal is <span class="math notranslate nohighlight">\(Q\)</span>.</p>
+<p>The grammar file is attached to the archive.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}S &amp;\to \varepsilon \\
-S &amp;\to \mathit{eps} \; S \\
-S &amp;\to Q \; S \\
-S &amp;\to V \; S \\
-S_{\mathit{psh}_i} &amp;\to \mathit{psh}_i \; S \\
-S_{\mathit{vpsh}_i} &amp;\to \mathit{vpsh}_i \; S \\
-V &amp;\to S_{\mathit{vpsh}_i} \; \mathit{vpp}_i \\
-Q &amp;\to S_{\mathit{psh}_i} \; \mathit{pp}_i \\
-&amp;\forall i\end{split}\]</div>
+  &amp;\mid \texttt{eps} \quad S \\
+  &amp;\mid Q \quad S \\
+  &amp;\mid V \quad S \\
+S\#psh\_i &amp;\to \texttt{psh\_i} \quad S \\
+S\#vpsh\_i &amp;\to \texttt{vpsh\_i} \quad S \\
+V &amp;\to S\#vpsh\_i \quad \texttt{vpp\_i} \\
+Q &amp;\to S\#psh\_i \quad \texttt{pp\_i}\end{split}\]</div>
 </section>
 </section>
 
