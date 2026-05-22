@@ -607,21 +607,21 @@
 <h2><a class="toc-backref" href="#id6" role="doc-backlink">Grammar</a><a class="headerlink" href="#grammar" title="Link to this heading">#</a></h2>
 <p>The grammar file is attached to the archive.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}S &amp;\to \texttt{Entity} \quad Core \quad \texttt{Entity} \\
-Core &amp;\to \texttt{wasDerivedFrom} \\
-     &amp;\mid \texttt{wasDerivedFrom\_r} \\
-     &amp;\mid \texttt{specializationOf} \\
-     &amp;\mid \texttt{specializationOf\_r} \\
-     &amp;\mid \texttt{wasGeneratedBy} \quad \texttt{Activity} \quad \texttt{used} \\
-     &amp;\mid \texttt{used\_r} \quad \texttt{Activity} \quad \texttt{wasGeneratedBy\_r} \\
-     &amp;\mid \texttt{wasGeneratedBy} \quad \texttt{Activity} \quad Core \\
-     &amp;\quad \texttt{Activity} \quad \texttt{wasGeneratedBy\_r} \\
-     &amp;\mid \texttt{used\_r} \quad \texttt{Activity} \quad Core \\
-     &amp;\quad \texttt{Activity} \quad \texttt{used} \\
-     &amp;\mid \texttt{wasDerivedFrom} \quad \texttt{Entity} \quad Core \\
-     &amp;\quad \texttt{Entity} \quad \texttt{wasDerivedFrom\_r} \\
-     &amp;\mid \texttt{specializationOf} \quad \texttt{Entity} \quad Core \\
-     &amp;\quad \texttt{Entity} \quad \texttt{specializationOf\_r}\end{split}\]</div>
+\[\begin{split}S &amp;\to Entity \quad Core \quad Entity \\
+Core &amp;\to wasDerivedFrom \\
+     &amp;\mid wasDerivedFrom_{r} \\
+     &amp;\mid specializationOf \\
+     &amp;\mid specializationOf_{r} \\
+     &amp;\mid wasGeneratedBy \quad Activity \quad used \\
+     &amp;\mid used_{r} \quad Activity \quad wasGeneratedBy_{r} \\
+     &amp;\mid wasGeneratedBy \quad Activity \quad Core \\
+     &amp;\quad Activity \quad wasGeneratedBy_{r} \\
+     &amp;\mid used_{r} \quad Activity \quad Core \\
+     &amp;\quad Activity \quad used \\
+     &amp;\mid wasDerivedFrom \quad Entity \quad Core \\
+     &amp;\quad Entity \quad wasDerivedFrom_{r} \\
+     &amp;\mid specializationOf \quad Entity \quad Core \\
+     &amp;\quad Entity \quad specializationOf_{r}\end{split}\]</div>
 </section>
 </section>
 
